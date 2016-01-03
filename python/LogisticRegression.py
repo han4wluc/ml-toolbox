@@ -15,7 +15,7 @@ def costFunction(X, y, theta):
   h = sigmoid(X.dot(theta))
   J = 1./m * (-y.flatten() .dot( np.log(h)) - ( 1 - y.flatten() ) .dot( np.log(1-h)))
   g = 1./m * X.T.dot(h - y)
-
+  
   return J, g
 
   # grad = 1./m * X' * (sigmoid(X * theta) - y);
@@ -52,7 +52,7 @@ def gradientDescent(X, y, theta, alpha, num_iters):
     predictions = X.dot(theta)
     errors = (predictions - y) * X 
     theta = (theta.T - alpha * (1.0 / m) * errors.sum(axis=0)).T
-    J_history[i, 0] = costFunction(X, y, theta)
+    # J_history[i, 0] = costFunction(X, y, theta)
 
   return theta, J_history
 

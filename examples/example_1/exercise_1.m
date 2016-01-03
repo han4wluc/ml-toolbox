@@ -20,9 +20,11 @@ y = data(:,2);
 );
 
 theta
+
+% a(1, :)       # row 1, all columns
 % JHist
 
-% predict1 = [1, 3.5] * theta
-% predict2 = [1, 7] * theta
+% predict1 = [1, 3.5] * theta % 0.27984
+% predict2 = [1, 7] * theta   % 4.4555
 % predictedY = theta(1) + (X(:, 2) * theta(2))
 % [X(:,2),theta(1) + (X(:, 2) * theta(2)), y]

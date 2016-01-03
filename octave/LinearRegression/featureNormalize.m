@@ -11,8 +11,20 @@
 function output = featureNormalize (input)
   myMean = mean(input);
   myStd = std(input);
-  output = (input - myMean)/myStd;
+
+  % remove std = 0
+  idx = myStd == 0;
+  myStd(idx) = myMean(idx);
+  myMean(idx) = 0;
+
+  output = (input - myMean)./myStd;
 end
+
+% A = [0,1,1;1,0,0;0,0,0]
+% B = [3,0,0;0,3,3;4,4,4]
+% idx = A == 0;
+% A(idx) = B(idx);
+% result = [3,1,1;1,3,3;4,4,4]
 
 
 %!test

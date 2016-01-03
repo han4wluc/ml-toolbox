@@ -46,5 +46,10 @@ prediction = t0 + t1 * X
 
 
 TODO:
-exercise_2 : multivaraible linear regression
-exercise_3 : selecting learning rate
+* Octave
+* Visualization
+* exercise_2 : multivaraible linear regression
+* exercise_3 : selecting learning rate
+*
+* Python:
+* exercise_2, exercise_3, exercise_4

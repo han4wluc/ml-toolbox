@@ -17,11 +17,14 @@ function [Min, J_history] = gradientDescent(
   alpha,
   num_of_iter
 );
+  warning('off', 'Octave:broadcast');
   m = size(X,1);
   % theta_history = zeros(num_of_iter, 1);
   for i=1:num_of_iter,
-    theta = theta - (alpha/m *  (X * theta-y)' * X)';
+    % theta = theta - (alpha/m *  (X * theta-y)' * X)';
+    theta = theta - (alpha/m * sum((X*theta - y) .* X))';
     % theta_history(i) = theta;
+    % theta
   end;
   Min = theta;
   % J_history = zeros(num_of_iter, 1);
